@@ -1,4 +1,4 @@
-const cellSize = 20;
+const cellSize = 15;
 
 const grid = [
     [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
@@ -44,6 +44,6 @@ const grid = [
 ];
 
 const predefinedColors = {
-    1: '#ffffff', // White
-    2: '#ff0000', // Red
+    1: { hex: '#ffffff', name: 'White' },
+    2: { hex: '#ff0000', name: 'Red' }
 };

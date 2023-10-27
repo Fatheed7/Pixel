@@ -21,7 +21,7 @@ const grid = [
 ];
 
 const predefinedColors = {
-    1: '#ffffff', // White
-    2: '#000000', // Black
-    3: '#ff0000', // Red
+    1: { hex: '#ffffff', name: 'White' },
+    2: { hex: '#000000', name: 'Black' },
+    3: { hex: '#ff0000', name: 'Red' }
 };

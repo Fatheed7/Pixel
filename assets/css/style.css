@@ -15,3 +15,7 @@
     text-align: center;
     width: 95vw;
 }
+
+li {
+    list-style-type: none;
+}
