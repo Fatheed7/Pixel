@@ -2,37 +2,10 @@ const canvas = document.getElementById('pixelCanvas');
 const context = canvas.getContext('2d');
 const colorPicker = document.getElementById('colorPicker');
 const colorPaletteDiv = document.getElementById('colorPalette');
-const cellSize = 40;
 const lockedCells = new Set();
 let isDrawing = false;
 let colouredCells = 0;
 let gameState = 0;
-
-const predefinedColors = {
-    1: '#ffffff', // White
-    2: '#000000', // Black
-    3: '#ff0000', // Red
-};
-
-const grid = [
-    [1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1],
-    [1, 1, 2, 2, 3, 3, 3, 2, 1, 1, 2, 3, 3, 3, 2, 2, 1, 1],
-    [1, 2, 3, 3, 3, 3, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 2, 1],
-    [1, 2, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1],
-    [2, 3, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
-    [2, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
-    [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
-    [2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2],
-    [1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1],
-    [1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1],
-    [1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1],
-    [1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1],
-    [1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 2, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 2, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
-];
 
 const totalCells = grid.reduce((total, row) => total + row.length, 0);
 
@@ -66,8 +39,8 @@ for (const number in predefinedColors) {
     const color = predefinedColors[number];
     const colorButton = document.createElement('button');
     colorButton.style.backgroundColor = color;
-    colorButton.style.width = '40px';
-    colorButton.style.height = '40px';
+    colorButton.style.width = "40px";
+    colorButton.style.height = "40px";
     colorButton.style.margin = '0 10px';
     if (number != 1) {
         colorButton.style.color = 'white';
@@ -92,6 +65,8 @@ for (const number in predefinedColors) {
     colorPaletteDiv.appendChild(colorButton);
 }
 
+
+
 function startDrawing(event) {
     isDrawing = true;
     draw(event);
@@ -104,7 +79,6 @@ function draw(event) {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    const cellSize = 40;
     const row = Math.floor(y / cellSize);
     const col = Math.floor(x / cellSize);
 

@@ -3,33 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/pico.min.css">   
     <title>Coloring Game</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-        }
-    </style>
-    <style>
-        canvas {
-            border: 1px solid black;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <canvas id="pixelCanvas" width="720px" height="680px"></canvas>
-    <br>
-    <div>
-        <label style="display: none;">Select Color: </label>
-        <input type="color" id="colorPicker" style="display: none;" value="#ffffff">
-        <div id="colorPalette"></div>
-        <div class="div">
-            <p>Current Color: <span id="currentColor">White</span></p>
-        </div>
-        <script src="script.js"></script>
+    <div class="container">
+        <article>
+            <div class="grid">
+                <a href="heart.html" class="game-link"><div class="game-div"><i class="fa-solid fa-heart"></i> Heart</div></a>
+                <a href="canada.html" class="game-link"><div class="game-div"><i class="fa-brands fa-canadian-maple-leaf"></i> Canadian Flag</div></a>
+            </div>
+        </article>
     </div>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/346432df9f.js" crossorigin="anonymous"></script>
 </body>
 </html>

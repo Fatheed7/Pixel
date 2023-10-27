@@ -1,0 +1,17 @@
+.game-div {
+    padding: calc(var(--spacing)/ 2) 0;
+    border-radius: var(--border-radius);
+    background: var(--code-background-color);
+    font-size: 87.5%;
+    text-align: center
+}
+
+.game-link {
+    text-decoration: none;
+    color: black;
+}
+
+#wrapper {
+    text-align: center;
+    width: 95vw;
+}
